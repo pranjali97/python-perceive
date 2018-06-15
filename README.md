@@ -7,6 +7,7 @@ In case of a google search query, an image and speech response about the queried
 Future Scope:
 
 1.Integrating additional services such as weather and banking information. 
+
 2.Location services
 
 
