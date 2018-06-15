@@ -4,5 +4,4 @@ This is a mini project that aims to take in voice inputs and perform smaller lin
 It makes use of the google cloud speech api for the speech to text and text to speech conversion.
 In case of a google search query, an image and speech response about the queried element is received. 
 
-Future Scope
-Integrating additional services such as weather and banking information. 
+
