@@ -11,6 +11,19 @@ def prepare_date(self):
 
 def prepare_time(self):
     self.response = self.response + self.result[2:-2]
+    
+def assistant(data):
+    if "how are you" in data:
+        speak("I am fine")
+ 
+    if "what time is it" in data:
+        speak(ctime())
+ 
+    if "where is" in data:
+        data = data.split(" ")
+        location = data[2]
+        speak("Hold on Frank, I will show you where " + location + " is.")
+        os.system("chromium-browser https://www.google.nl/maps/place/" + location + "/&amp;")    
 
 class Action(object):
     def __init__(self, command, response, preparator=None):
@@ -62,6 +75,7 @@ try:
             # speech to text
             value = r.recognize_google_cloud(audio)
             print("You said {}".format(value))
+            assistant(value)
             action_obj = action_mapper[value.strip()]
             action_obj.execute()
             action_obj.respond()
